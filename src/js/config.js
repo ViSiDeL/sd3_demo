@@ -1,4 +1,3 @@
-// rename to config.js and fill in the correct paths
 export const CONFIG = {
   dataPaths: {
     buildings: './data/grid_buildings.json',
@@ -23,5 +22,5 @@ export const CONFIG = {
     far: 5000,
     startPosition: { x: 0, y: 220, z: 260 },
   },
-  dashboardBaseUrl: 'https://site.path.here',
+  dashboardBaseUrl: 'https://sd3-3qt.pages.dev',
 };
