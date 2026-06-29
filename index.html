@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sd3 tool visualization</title>
+  <link rel="stylesheet" href="src/css/style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.165.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.165.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <canvas id="scene-canvas"></canvas>
+  
+  <div id="primary-hud" class="hud-panel">
+    <div id="focused-load-row" class="focused-load-row" hidden>
+      <span class="focused-load-label">Viewing</span>
+      <span id="focused-load-id" class="focused-load-id">LOAD #----</span>
+      <button id="clear-focus-btn" class="clear-focus-btn" aria-label="Clear">&times;</button>
+    </div>
+
+    <div class="view-toggle-group" role="group" aria-label="Scene view mode">
+      <button class="view-toggle-btn active" data-view="real">Real View</button>
+      <button class="view-toggle-btn" data-view="grid">Grid View</button>
+    </div>
+  </div>
+
+  <div id="embed-panel" class="hud-panel embed-panel minimized">
+    <div id="embed-resize-handle" class="embed-resize-handle" title="Drag to resize"></div>
+    <div class="embed-header">
+      <span class="embed-title">SD3 TOOL</span>
+      <div class="embed-header-actions">
+        <a id="embed-open-btn" class="embed-open-btn" href="" target="_blank" rel="noopener" title="open in new tab">↗</a>
+        <button id="embed-toggle-btn" class="embed-toggle-btn" aria-expanded="false">
+          Minimize
+        </button>
+      </div>
+    </div>
+    <div id="embed-instruction" class="embed-instruction" hidden></div>
+    <iframe
+      id="embed-iframe"
+      class="embed-iframe"
+      title="SD3 cyber-grid tool"
+      referrerpolicy="no-referrer"
+    ></iframe>
+  </div>
+
+  <button id="embed-restore-btn" class="embed-restore-btn">
+    Show SD3 Tool
+  </button>
+
+  <script type="module" src="src/js/main.js"></script>
+</body>
+</html>
